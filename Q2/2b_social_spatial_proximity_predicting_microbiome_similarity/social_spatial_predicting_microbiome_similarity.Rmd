@@ -1,0 +1,37 @@
+---
+title: "2b_social_spatial_predicting_microbiome_similarity"
+author: "Holly Neille"
+date: "2024-05-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries
+```{r}
+library(brms)
+```
+
+## Social association and spatial proximity predicting microbiome similarity
+I constructed a dyadic Bayesian betaregression models predicting microbiome Jaccard similarity with social association, spatial association and dyadic covariates (sex similarity, age similarity, temporal distance between samples collected and read depth difference). I included multi-membership random effects to account for non-independence of the response variable, Jaccard similarity, where the same individuals or samples are in multiple dyads. 
+
+```{r}
+soc_spa_micr <- readRDS("msim_spa_12_all_rd2_rerun2.rds")
+summary(soc_spa_micr)
+```
+
+## Phenotypically subsetting microbiome
+Anaerobic microbiome
+```{r}
+soc_spa_micr_ana <- readRDS("msim_spa_12_all_ana.rds")
+summary(soc_spa_micr_ana)
+```
+
+Aerotolerant microbiome
+```{r}
+soc_spa_micr_aer <- readRDS("msim_spa_12_all_aer.rds")
+summary(soc_spa_micr_aer) # no issues with divergent transitions here or adapt_delta as the models run with these issues fixed in Raulo et al., 2024 had the same model estimates and significance.
+```
+
