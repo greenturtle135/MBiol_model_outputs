@@ -13,3 +13,5 @@ This study investigates 3 key questions:
   b. Social/ spatial proximity predicting microbiome similarity
 
 3. Do different aspects of social centrality predict parasitome or microbiome richness?
+
+See html file for the full outputs from models constructed for each question. I include the rmd file and all model files (.rds). 
