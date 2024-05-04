@@ -4,14 +4,20 @@ Bayesian model regression model outputs are stored in this repository. This Mast
 This study investigates 3 key questions: 
 
 1. Does social centrality predict the parasitome or microbiome?
+
   a. Social centrality and parasite infection status
+
   b. Social centrality and parasitome richness
+
   c. Social centrality and microbiome richness
 
-2. Does social association or spatial proximity predict similarity in parasitome or microbiome communities?
+
+3. Does social association or spatial proximity predict similarity in parasitome or microbiome communities?
+
   a. Social/ spatial proximity predicting parasitome similarity
+
   b. Social/ spatial proximity predicting microbiome similarity
 
-3. Do different aspects of social centrality predict parasitome or microbiome richness?
+5. Do different aspects of social centrality predict parasitome or microbiome richness?
 
 See html file for the full outputs from models constructed for each question. I include the rmd file and all model files (.rds). 
