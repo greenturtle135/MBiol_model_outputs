@@ -20,4 +20,4 @@ This study investigates 3 key questions:
 
 3. Do different aspects of social centrality predict parasitome or microbiome richness?
 
-See html file for the full outputs from models constructed for each question. I include the rmd file and all model files (.rds). 
+See HTML files for the full outputs from models constructed for each question. I included the Rmd. files and all model files (.rds). 
