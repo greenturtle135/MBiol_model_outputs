@@ -1,0 +1,85 @@
+---
+title: "2a_social_spatial_predicting_parasitome_similarity"
+author: "Holly Neille"
+date: "2024-05-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries
+```{r}
+library(brms)
+```
+
+## Social association and spatial proximity predicting parasitome similarity
+I constructed a dyadic Bayesian betaregression models predicting parasitome Jaccard similarity with social association, spatial association and dyadic covariates (sex similarity, age similarity, temporal distance between samples collected and sample mass differences). I included multi-membership random effects to account for non-independence of the response variable, Jaccard similarity, where the same individuals or samples are in multiple dyads. 
+
+```{r}
+soc_spa_para <- readRDS("psim_01beta_spa_na_2.rds")
+summary(soc_spa_para)
+```
+
+## Social association and spatial proximity predicting sharing of parasite taxa infection status 
+Separate dyadic Bayesian Bernoulli models were constructed predicting parasite taxa level infection status sharing (0/1) with social association, spatial association and covariates above. Models were constructed for prevalent parasite taxa (infeciton prevalence>15%).
+
+Aonchotheca sp. 
+```{r}
+soc_spa_aonch <- readRDS("cap_model_all_new_2.rds")
+summary(soc_spa_aonch)
+```
+
+H. polygyrus
+```{r}
+soc_spa_hpol <- readRDS("hpoly_model_all_new_2.rds")
+summary(soc_spa_hpol)
+```
+
+E. apionodes
+```{r}
+soc_spa_eap <- readRDS("eap_model_all_new.rds")
+summary(soc_spa_eap)
+```
+
+E. hungaryensis
+```{r}
+soc_spa_ehung <- readRDS("ehung_model_new.rds")
+summary(soc_spa_ehung)
+```
+
+E. uptoni
+```{r}
+soc_spa_eupt <- readRDS("euptoni_model_new.rds")
+summary(soc_spa_eupt)
+```
+
+Investigating the effect of the interaction between temporal distance and social association to determine if the effect of social association is stronger for samples collected closer together in time (social_proximity*temporal_distance). 
+
+Aonchotheca sp. 
+```{r}
+aoc_inter <- readRDS("cap_model_all_inter.rds")
+summary(aoc_inter)
+```
+H. poly
+```{r}
+hpol_inter<- readRDS("hpoly_model_all_inter.rds")
+summary(hpol_inter)
+```
+E. apionodes
+```{r}
+eap_inter<- readRDS("eap_model_all_inter.rds")
+summary(eap_inter)
+```
+E. hungaryensis
+```{r}
+ehung_inter<- readRDS("ehung_model_inter2.rds")
+summary(ehung_inter)
+```
+E. uptoni
+```{r}
+eupt_inter<- readRDS("euptoni_model_inter.rds")
+summary(eupt_inter)
+```
+
