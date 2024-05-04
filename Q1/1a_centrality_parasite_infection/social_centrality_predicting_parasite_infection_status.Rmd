@@ -1,0 +1,170 @@
+---
+title: "social_centrality_predicting_parasite_infection"
+author: "Holly Neille"
+date: "2024-05-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load relevant libraries
+```{r}
+library(brms)
+```
+
+## Social centrality predicting parasite infection status (0/1)
+Separate Bayesian Bernouilli regression models predicted parasite infection status with each social centrality metric (due to potential covariance between social centrality metrics). I included the covariates (sex-reproductive status and faecal mass) and random effect of individual ID. Due to sample size limitations, including age and month resulted in model convergence so I did not include these covariates. 
+
+Degree
+```{r}
+deg_TINF <- readRDS("TINF_d4.rds")
+summary(deg_TINF)
+```
+
+Strength
+```{r}
+str_TINF <- readRDS("TINF_s_2.rds")
+summary(deg_TINF)
+```
+
+Eigenvector centrality
+```{r}
+eig_TINF <- readRDS("TINF_e2.rds")
+summary(deg_TINF)
+```
+
+Betweenness
+```{r}
+bet_TINF <- readRDS("TINF_b_2.rds")
+summary(deg_TINF)
+```
+
+Bridge propensity
+```{r}
+bp_TINF <- readRDS("TINF_bp2.rds")
+summary(deg_TINF)
+```
+
+Clustering coefficient 
+```{r}
+cc_TINF <- readRDS("TINF_cc_2.rds")
+summary(deg_TINF)
+```
+
+## Social centrality predicting parasite taxa-specific infection status (0/1)
+Separate Bayesian Bernouilli regression models predicted infection status with prevalent parasite taxa (prevalence>15%) with each social centrality metric (due to potential covariance between social centrality metrics). I included the covariates (sex-reproductive status and faecal mass) and random effect of individual ID. Due to sample size limitations, including age and month resulted in model convergence so I did not include these covariates. 
+
+#### H. polygyrus
+Degree 
+```{r}
+hpol_deg <- readRDS("hpol_INF_d.rds")
+summary(hpol_deg)
+```
+
+Strength
+```{r}
+hpol_str <- readRDS("hpol_INF_s.rds")
+summary(hpol_str)
+```
+
+Eigenvector centrality
+```{r}
+hpol_eig <- readRDS("hpol_INF_e.rds")
+summary(hpol_eig)
+```
+
+Betweenness
+```{r}
+hpol_bet <- readRDS("hpol_INF_b.rds")
+summary(hpol_bet)
+```
+
+Bridge propensity
+```{r}
+hpol_bp <- readRDS("hpol_INF_bp.rds")
+summary(hpol_bp)
+```
+
+Clustering coefficient
+```{r}
+hpol_cc <- readRDS("hpol_INF_cc.rds")
+summary(hpol_cc)
+```
+
+#### Aonchotheca sp. 
+Degree 
+```{r}
+aonc_deg <- readRDS("cap_INF_d.rds")
+summary(aonc_deg)
+```
+
+Strength
+```{r}
+aonc_str <- readRDS("cap_INF_s.rds")
+summary(aonc_str)
+```
+
+Eigenvector centrality
+```{r}
+aonc_eig <- readRDS("cap_INF_e.rds")
+summary(aonc_eig)
+```
+
+Betweenness
+```{r}
+aonc_bet <- readRDS("cap_INF_b.rds")
+summary(aonc_bet)
+```
+
+Bridge propensity
+```{r}
+aonc_bp <- readRDS("cap_INF_bp.rds")
+summary(aonc_bp)
+```
+
+Clustering coefficient
+```{r}
+aonc_cc <- readRDS("cap_INF_cc.rds")
+summary(aonc_cc)
+```
+
+#### Eimeria spp. 
+Eimeria spp. infection status encompasses infection status for either E. apionodes, E. hungaryensis or E. uptoni. Sample size was too small to investigate separate Eimeria species. 
+
+Degree 
+```{r}
+eim_deg <- readRDS("deg_EIM_d.rds")
+summary(eim_deg)
+```
+
+Strength
+```{r}
+eim_str <- readRDS("str_EIM.rds")
+summary(eim_str)
+```
+
+Eigenvector centrality
+```{r}
+eim_eig <- readRDS("eig_EIM.rds")
+summary(eim_eig)
+```
+
+Betweenness
+```{r}
+eim_bet <- readRDS("bet_EIM.rds")
+summary(eim_bet)
+```
+
+Bridge propensity
+```{r}
+eim_bp <- readRDS("bp_EIM.rds")
+summary(eim_bp)
+```
+
+Clustering coefficient
+```{r}
+eim_bp <- readRDS("cc_EIM.rds")
+summary(eim_bp)
+```
