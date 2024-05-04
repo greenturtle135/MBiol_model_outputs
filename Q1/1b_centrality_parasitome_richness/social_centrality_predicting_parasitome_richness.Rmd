@@ -1,0 +1,55 @@
+---
+title: "social_centrality_and_parasitome_richness"
+author: "Holly Neille"
+date: "2024-05-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load in libraries 
+```{r}
+library(brms)
+```
+
+## Social centrality predicting parasitome richness
+Separate Bayesian Poisson regression models were constructed to predict parasitome richness (number of gut parasite taxa) with each social centrality metric. I included covariates (sex-reproductive status, age, month, faecal sample mass) and the random effect (individual ID). All centrality metrics were scaled between 0 and 1 to allow for comparison of effect sizes. 
+
+Degree
+```{r}
+deg_prich <- readRDS("d_pois_scaled.rds")
+summary(deg_prich)
+```
+
+Strength
+```{r}
+str_prich <- readRDS("s_pois_scaled.rds")
+summary(str_prich)
+```
+
+Eigenvector centrality
+```{r}
+eig_prich <- readRDS("e_pois_filt.rds") # eigenvector range is between 0 and 1
+summary(eig_prich)
+```
+
+Betweeenness
+```{r}
+bet_prich <- readRDS("bet_pois_scaled2.rds")
+summary(bet_prich)
+```
+
+Bridge propensity
+```{r}
+bp_prich <- readRDS("bp_pois_scaled3.rds")
+summary(bp_prich)
+```
+
+Clustering coefficient
+```{r}
+cc_prich<- readRDS("cc_pois_s3.rds")
+summary(cc_prich)
+```
+
