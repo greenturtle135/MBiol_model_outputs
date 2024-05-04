@@ -1,0 +1,132 @@
+---
+title: "social_centrality_predicting_microbiome_richness"
+author: "Holly Neille"
+date: "2024-05-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load in libraries 
+```{r}
+library(brms)
+```
+
+## Social centrality predicting parasitome richness
+Separate Bayesian Poisson regression models were constructed to predict microbiome richness (number of unique ASVs) with each social centrality metric. I included covariates (sex-reproductive status, age, month, read depth) and the random effect (individual ID). All centrality metrics were scaled between 0 and 1 to allow for comparison of effect sizes. 
+
+#### Overall microbiome
+Degree
+```{r}
+deg_mrich <- readRDS("m1d_ALL_s2.rds")
+summary(deg_mrich)
+```
+
+Strength
+```{r}
+str_mrich <- readRDS("m1s_ALL_s2.rds")
+summary(str_mrich)
+```
+
+Eigenvector centrality
+```{r}
+eig_mrich <- readRDS("m1e_ALL.rds") # eigenvector range is between 0 and 1
+summary(eig_mrich)
+```
+
+Betweeenness
+```{r}
+bet_mrich <- readRDS("m1b_ALL_s2.rds")
+summary(bet_mrich)
+```
+
+Bridge propensity
+```{r}
+bp_mrich <- readRDS("m1bp_ALL_s2.rds")
+summary(bp_mrich)
+```
+
+Clustering coefficient
+```{r}
+cc_mrich<- readRDS("m1cc_ALL_s2.rds")
+summary(cc_mrich)
+```
+
+#### Anaerobic microbiome
+Degree
+```{r}
+deg_mrich_ana <- readRDS("m1d_ana_s2.rds")
+summary(deg_mrich_ana)
+```
+
+Strength
+```{r}
+str_mrich_ana <- readRDS("m1s_ana_s2.rds")
+summary(str_mrich_ana)
+```
+
+Eigenvector centrality
+```{r}
+eig_mrich_ana <- readRDS("m1e_anaerobes_2.rds") # eigenvector range is between 0 and 1
+summary(eig_mrich_ana)
+```
+
+Betweeenness
+```{r}
+bet_mrich_ana <- readRDS("m1b_ana_s2.rds")
+summary(bet_mrich_ana)
+```
+
+Bridge propensity
+```{r}
+bp_mrich_ana <- readRDS("m1bp_ana_s2.rds")
+summary(bp_mrich_ana)
+```
+
+Clustering coefficient
+```{r}
+cc_mrich_ana<- readRDS("m1cc_ana_s2_2.rds")
+summary(cc_mrich_ana)
+```
+
+
+#### Aerotolerant microbiome
+Degree
+```{r}
+deg_mrich_aer <- readRDS("m1d_aer_s2.rds")
+summary(deg_mrich_aer)
+```
+
+Strength
+```{r}
+str_mrich_aer <- readRDS("m1s_aer_s2.rds")
+summary(str_mrich_aer)
+```
+
+Eigenvector centrality
+```{r}
+eig_mrich_aer <- readRDS("m1e_aer.rds") # eigenvector range is between 0 and 1
+summary(eig_mrich_aer)
+```
+
+Betweeenness
+```{r}
+bet_mrich_aer <- readRDS("m1b_aer_s2.rds")
+summary(bet_mrich_aer)
+```
+
+Bridge propensity
+```{r}
+bp_mrich_aer <- readRDS("m1bp_aer_s2.rds")
+summary(bp_mrich_aer)
+```
+
+Clustering coefficient
+```{r}
+cc_mrich_aer<- readRDS("m1cc_aer_s2_2.rds")
+summary(cc_mrich_aer)
+```
+
+
