@@ -20,4 +20,8 @@ This study investigates 3 key questions:
 
 3. Do different aspects of social centrality predict parasitome or microbiome richness?
 
+      a. Relationship between gut parasitome richness and microbiome richness
+
+      b. Testing the difference of the effects of social centrality metrics on parasitome or microbiome richness. 
+
 See HTML files for the full outputs from models constructed for each question. I included the Rmd. files and all model files (.rds). 
