@@ -1,0 +1,24 @@
+---
+title: "parasitome_richness_and_microbiome_richness"
+author: "Holly Neille"
+date: "2024-05-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries 
+```{r}
+library(brms)
+```
+
+## Parasitome richness predicting microbiome richness
+Bayesian Poisson regression model predicting microbiome richness as a function of parasitome richness and covariates (sex-reproductive status, age, read depth, month). Random effect of individual ID is included. 
+
+```{r}
+para_mic<- readRDS("richness_m_d_bayes_4.rds")
+summary(para_mic)
+```
+
