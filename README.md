@@ -1,5 +1,5 @@
 # MBiol_model_outputs
-Bayesian model regression model outputs are stored in this repository. This Masters project investigates the impact of social behaviour on gut-dwelling communities (both the gut parasitome and microbiome).
+Bayesian model regression model outputs are stored in this repository. This Masters project investigates the impact of social behaviour on gut-dwelling communities (both the gut parasitome and microbiome). Download the .html file to see model ouptuts for each subquestion. 
 
 This study investigates 3 key questions: 
 
